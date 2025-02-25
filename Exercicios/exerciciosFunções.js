@@ -46,5 +46,5 @@ function compararIdade(idadeA,idadeB){
     else if (idadeA < idadeB){
         console.log("idade 2 é maior")
 } else 
-    console.log("idade iguais")
+    console.log("idades iguais")
 }console.log(compararIdade(idadeA = Number(prompt("Qual a Primeira idade?")),idadeB = Number(prompt("Qual a Segunda idade?"))))
