@@ -4,5 +4,16 @@
     "@react-navigation/native": "^7.1.8",
     "@react-navigation/native-stack": "^7.3.12",
     "firebase": "^11.7.0"
-  }
+  },
+  "name": "javascript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
