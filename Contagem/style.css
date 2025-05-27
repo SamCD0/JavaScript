@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+ body {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+   
+}
+ 
+ #contador {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+    font-size: 30px;
+}
+#dias {
+    color: #fab12f ;
+}
+h1{
+    color: #0781c8;
+}
+#minutos{
+   color: #08a052;
+}
+#segundos{
+   color: #e7324c;
+}
+ 
