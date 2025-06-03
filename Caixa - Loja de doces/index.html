@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caixa Doces</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Simulador de Caixa</h2>
+    
+    <label for="produto">Produto:</label>
+    <select id="produto" onchange="atualizarValor()">
+
+        <option value="Bala">Bala 🍬</option>
+        <option value="Chocolate">Chocolate 🍫</option>
+        <option value="Bolacha">Bolacha 🍪</option>
+    </select>
+
+    <br><br>
+
+    <label for="valor">Valor (R$):</label>
+    <input type="text" id="valor" readonly>
+
+    <br><br>
+
+    <label>Quantidade:
+        <input type="number" id="quantidade" min="1">
+    </label>
+
+    <br><br>
+
+    <button onclick="adicionarItem()">Adicionar à compra</button>
+    <button onclick="limparTudo()">Limpar tudo</button>
+
+    <h3>Itens:</h3>
+    <ul id="listarItens"></ul>
+
+    <h3>Total: R$ <span id="Total">0.00</span></h3>
+
+    <script src="script.js"></script>
+</body>
+</html>
