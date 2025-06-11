@@ -1,11 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lista de Exercícios - DOM</title>
 </head>
 <body>
+
+    <p id="textoAlterado">Texto para mudar de cor</p>
+    <button onclick="mudarCorTexto()">Mudar Cor do Texto</button>
+    
+    <br><br>
+    
+    <button id="botaoAlterado" onclick="mudarCorBotao()">Mudar Cor do Botão</button>
+    
+    <br><br>
+    
+    <p id="textoMaior" ondblclick="aumentarFonte()">Dê um duplo clique para aumentar a fonte</p>
+    
+    <br><br>
+    
+    <div id="blocoAlterado" onmouseover="hoverBloco()" onmouseout="sairBloco()">Passe o mouse aqui</div>
+    
+    <br><br>
+    
+    <img id="imagemAlterada" src="Imagens/A.jpg" alt="Imagem Exemplo">
+    <button onclick="aumentarImagem()">Diminuir Imagem</button>
+    
+    <br><br>
+    
+    <img id="imagemRedondaAlterada" src="Imagens/B.png" alt="Imagem Exemplo">
+    <button onclick="arredondarImagem()">Arredondar Imagem</button>
+    
+    <br><br>
+    
+    <p id="paragrafoAlterado1">Parágrafo 1</p>
+    <button onclick="alterarParagrafo1()">Alterar Parágrafo 1</button>
+    
+    <p id="paragrafoAlterado2">Parágrafo 2</p>
+    <button onclick="alterarParagrafo2()">Alterar Parágrafo 2</button>
+    
+    <p id="paragrafoAlterado3">Parágrafo 3</p>
+    <button onclick="alterarParagrafo3()">Alterar Parágrafo 3</button>
+
     <script src="script.js"></script>
 </body>
 </html>
