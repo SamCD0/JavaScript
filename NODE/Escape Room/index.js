@@ -48,7 +48,7 @@ function investigarGrampeador(){
         } else{
             console.log("Resposta Errada. Tente novamente depois")
         }
-        menuPrincipal()
+         return menuPrincipal()
     })
 }
 function investigarPapeis() {
@@ -62,7 +62,7 @@ function investigarPapeis() {
         } else {
             console.log("Errou! Não é isso")
         }
-        menuPrincipal
+        return menuPrincipal()
     })
 }
 function investigarAlmofada() {
@@ -76,10 +76,10 @@ function investigarAlmofada() {
         } else {
             console.log("Não é isso, PEnse um pouco mais")
         }
-        menuPrincipal()
+        return menuPrincipal()
     })
 }
-function verificarSaida() {
+function investigarSaida() {
     if (resolvidos.grampeador && resolvidos.almofada && resolvidos.papeis) {
         console.log("A porta ainda esta fechada. Você não resolveu os enigmas")
         menuPrincipal()
