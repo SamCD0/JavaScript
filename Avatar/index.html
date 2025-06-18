@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        .container {
+            display:flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 20px;
+        }
+        .box {
+            background-color: white;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0px 4px 8px  black;
+        }
+        .controle{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .controle button{
+            margin: 0 10px;
+            padding: 5px 10px;
+        }
+        #avatar{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 300px;
+            gap: 10px;
+        }
+        #avatar img{
+            width: 250px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Monte seu avatar</h1>
+        <div class="container">
+            <div class="box">
+                <div class="label">Cabelo</div>
+                    <img id="cabelo" src="imagem/cabelo/cabelo1.png" width="100" alt="">
+                    <div class="controle">
+                        <button onclick="troca('cabelo', -1)"> < </button>
+                        <button onclick="troca('cabelo', 1)"> > </button>
+                    </div>
+            </div>
+
+            <div class="box">
+                <div class="label">Rosto</div>
+                <img id="rosto" src="imagem/rosto/rosto1.png" width="100" alt="">
+                <div class="controle">
+                    <button onclick="troca('rosto', -1)"> < </button>
+                    <button onclick="troca('rosto', 1)"> > </button>
+                </div>
+            </div>
+            <div class="box">
+                <div class="label">corpo</div>
+                <img id="corpo" src="imagem/corpo/corpo1.png" width="100" alt="">
+                <div class="controle">
+                    <button onclick="troca('corpo', -1)"> < </button>
+                    <button onclick="troca('corpo', 1)"> > </button>
+         </div>
+    </div>
+    
+    <div id="avatar">
+        <img src="imagem/cabelo/cabelo1.png" alt="" id="img-cabelo">
+        <img src="imagem/rosto/rosto1.png" alt="" id="img-rosto">
+        <img src="imagem/corpo/corpo1.png" alt="" id="img-corpo">
+    </div>
+
+    <button onclick="baixarAvatar()">Baixar avatar</button>
+    <!-- Biblioteca para capturar a imagem da div -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js "></script>
+
+<script>
+    const opcoes = { //Maximo de opcoes por parte 
+        cabelo: 3,
+        rosto: 3,
+        corpo: 3
+    }
+    const estado = {// opcao atual
+        cabelo: 1,
+        rosto: 1,
+        corpo: 1
+    }
+
+    function troca(parte, direcao) {
+        estado[parte] += direcao //Atualiza o estado com base na direcao
+        //Se passou o maximo volta para 1
+        if(estado[parte] > opcoes[parte]) {
+            estado[parte] = 1
+        }
+        //Se passou  o minimo, vai para o maximo
+        if(estado[parte] < 1) {
+            estado[parte] = opcoes[parte]
+        }
+        //atualiza a imagem
+        document.getElementById(parte).src = `imagem/${parte}/${parte}${estado[parte]}.png`
+        //Atualiza a imagem na area do avatar
+        document.getElementById(`img-${parte}`).src = `imagem/${parte}/${parte}${estado[parte]}.png`
+    }
+    function baixarAvatar() {
+        const avatar = document.getElementById("avatar")
+        html2canvas(avatar).then(canvas => {
+            const link = document.createElement('a')
+            link.download = "meu_avatar.png"
+            link.href = canvas.toDataURL()
+            link.click
+        })
+    }
+</script>
+</body>
+</html>
