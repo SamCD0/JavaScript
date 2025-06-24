@@ -51,8 +51,9 @@
         }
         #imagem {
             align-items: center;
-            size-adjust: 80%;
-            border: 1px solid #000;
+            width: 100px;
+            height: 100px;
+            display: flex;
         }
     </style>
 </head>
@@ -89,29 +90,35 @@
 
             if (tipo == "feliz") {
                 musica = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
-                imagem = "Imagens/Helix.jpg" 
+                imagem = "😀" 
                 cor = "#ffe066"
             } else if (tipo == "tristeza") {
                 musica = "Musica/Sax.mp4"
-                imagem = "Imagens/Helix.png"
+                imagem = "😢"
                 cor = "#0000FF"
             } else if (tipo == "aventura") {
                 musica = "Musica/ind.mp3"
+                imagem = "🌅"
                 cor = "#00FF00"
             } else if (tipo == "amor") {
                 musica = "Musica/Care.mp4"
+                imagem = "❤️"
                 cor = "#ff007f"
             } else if (tipo == "terror") {
                 musica = "Musica/Silent.mp4"
+                imagem = "👻"
                 cor = "#FF0000"
             } else if (tipo == "calma") {
                 musica = "Musica/Calmo.mp4"
+                imagem = "😴"
                 cor = "#A020F0"
             } else if (tipo == "animacao") {
                 musica = "Musica/Africa.mp4"
+                imagem = "🤠"
                 cor = "#FFA500"
             } else if (tipo == "suspense") {
                 musica = "Musica/L.mp4"
+                imagem = "😬"
                 cor = "#808080"
             }
 

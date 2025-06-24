@@ -4,13 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A fuga</title>
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+        p {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+         .botoes {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        button {
+            color: black;
+            background-color: whitesmoke;
+            border: 1px solid #ccc;
+            padding: 10px 20px 10px 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+            text-align: center;
+            align-items: center;
+        
+
+        }
+        button:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
 </head>
 <body>
     <h1>A fuga</h1>
     <div id="historia">
         <p>Você Se encontra fugindo de uma horda de zumbis. O que você faz?</p>
-        <button onclick="escolha1('continuar')">continuar correndo</button>
-        <button onclick="escolha1('esconder')">Tentar se esconder em um beco</button>
+        <div class="botoes">
+        <button onclick="escolha1('continuar')">continuar correndo💨</button>
+        <button onclick="escolha1('esconder')">Tentar se esconder em um beco🫥</button>
+        </div>
     </div>
     <script>
         function escolha1(resposta) {
@@ -18,13 +70,17 @@
             if(resposta == "continuar") {
                 div.innerHTML = `
                 <p>Você ve fumaça de cima de um prédio. O que vai fazer?</p>
-                <button onclick="escolha2('predio')">Procurar Uma entrada no prédio</button> 
-                <button onclick="escolha2('correr')">Continuar correndo</button>
+                <div class="botoes">
+                <button onclick="escolha2('predio')">Procurar Uma entrada no prédio🚪</button> 
+                <button onclick="escolha2('correr')">Continuar correndo💨</button>
+                </div>
                 `
             } else if (resposta == "esconder"){
                 div.innerHTML = `<p>Você se esconde no beco e despista a horda. E agora?</p>
-                <button onclick="escolha2('lixo')">Procurar por coisas úteis</button>
-                <button onclick="escolha2('descansar')">Dar uma pausa para descansar e dormir um pouco</button>
+                         <div class="botoes">
+                <button onclick="escolha2('lixo')">Procurar por coisas úteis🗑️</button>
+                <button onclick="escolha2('descansar')">Dar uma pausa para descansar e dormir um pouco💤</button>
+                    </div>
                 `
             }
             //----------------------------------------------------
@@ -35,48 +91,85 @@
               //escolha com derivados
                 div.innerHTML = `
                 <p>Você não ve nehuma entrada exposta porem ve uma janela fechada. E agora?</p>
-                <button onclick="escolha3('janela')">Pular pela janela, mas se machucar</button>
-                <button onclick="escolha3('ignorar')">tentar se esconder atrás do prédio</button>
+                         <div class="botoes">
+                <button onclick="escolha3('janela')">Pular pela janela, mas se machucar🪟</button>
+                <button onclick="escolha3('ignorar')">tentar se esconder atrás do prédio🏨</button>
+                    </div>
                 `
             }  else if (escolhas == "correr"){
                 div.innerHTML = `
                 <p>Você Tenta continuar a fugir da horda, porem se cansa, e é devorado</p> 
+                <p>Derrota☠️</p>
                 `//Morte
             } else if (escolhas == "lixo")
                 div.innerHTML = `
                 <p>Em sua procura, voce acha comida estragada e um pedaço de madeira. E agora</p>
-                <button onclick="escolha3('Sair')">tentar fugir á procura de um lugar para ficar</button>
-                <button onclick="escolha3('descansar2')">Dar uma pausa para descansar e dormir um pouco</button>
+                         <div class="botoes">
+                <button onclick="escolha3('Sair')">tentar fugir á procura de um lugar para ficar🏃</button>
+                <button onclick="escolha3('descansar2')">Dar uma pausa para descansar e dormir um pouco💤</button>
+                    </div>
                 ` //escolha com derivados
             if(escolhas == "descansar"){
                 div.innerHTML = `
                 <p>Você se deita para descansar, porém os zumbis te acham, e voce nunca mias acorda</p>
+                <p>Derrota☠️</p>
                 ` //morte
         }
-                //-----------------------
-        }
+    }
     
         function escolha3(acao) {
+            const div = document.getElementById("historia")
             if(acao == "janela"){
                 div.innerHTML = `
                 <p>Você começa a subir as escadas e chega ao quinto andar, porém você ouve a porta caindo no terreo, e agora?</p>
-                <button onclick="escolha4('escadas')">Continuar subindo as escadas</button>
-                <button onclick="escolha4('quarto')">Parar no andar atual e procurar</button>
+                         <div class="botoes">
+                <button onclick="escolha4('escadas')">Continuar subindo as escadas🪜</button>
+                <button onclick="escolha4('quarto')">Parar no andar atual e entrar em uma das portas🚪</button>
+                    </div>
                 `
             }  else if (acao == "ignorar"){
                 div.innerHTML = `
                 <p>Você vai para tras do prédio porém é cercado e é devorado</p>
+                <p>Derrota☠️</p>
                 `
             } else if (acao == "Sair"){
                 div.innerHTML = `
                 <p>Ao sair de seu esconderijo, você se encontra em uma rua vazia, e anoitecendo. O que fazer?</p>
-                <button onclick="escolha4('beco')">Voltar ao beco para passar a noite</button>
-                <button onclick="escolha4('casa')">Procurar uma casa para passar a noite</button>
+                         <div class="botoes">
+                <button onclick="escolha4('beco')">Voltar ao beco para passar a noite🌃</button>
+                <button onclick="escolha4('casa')">Procurar uma casa para passar a noite🏠</button>
+                    </div>
                 `
             }
             if(acao == "descansar2"){
                 div.innerHTML = `
                 <p>Você se deita para descansar, porém os zumbis te acham, e voce nunca mias acorda</p>
+                <p>Derrota☠️</p>
+                `
+        } 
+     }
+     function escolha4(fim) {
+            const div = document.getElementById("historia")
+            if(fim == "escadas"){
+                div.innerHTML = `
+                <p>Você alcança o topo do prédio, porém a porta está trancada, e os zumbis te alcançam</p>
+                <p>Derrota☠️</p>
+                `
+            }  else if (fim == "quarto"){
+                div.innerHTML = `
+                <p>Você acha um quarto vazio e consegue despistar os zumbis, assim, sobrevivendo mais um dia✌️</p>
+                <p>Vitoria✌️</p>
+                `
+            } else if (fim == "beco"){
+                div.innerHTML = `
+                <p>Você volta ao beco, e dorme lá, porem enquanto dormia, os zumbis te acham, e você nunca mais acorda</p>
+                <p>Derrota☠️</p>
+                `
+            }
+            if(fim == "casa"){
+                div.innerHTML = `
+                <p>você acha uma casa abandonada para passar a noite, e consegue sobreviver</p>
+                <p>Vitoria✌️</p>
                 `
         } 
      }
