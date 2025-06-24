@@ -3,14 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cartões</title>
     <style>
-        .container{
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
             width: 300px;
-            height: 100px;
+            height: 150px;
             perspective: 1000px;
         }
-        .cartao{
+        .cartao {
             width: 100%;
             height: 100%;
             position: relative;
@@ -18,10 +33,10 @@
             transform-style: preserve-3d;
             cursor: pointer;
         }
-        .cartao.virado{
+        .cartao.virado {
             transform: rotateY(180deg);
         }
-        .frente, .verso{
+        .frente, .verso {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -30,47 +45,106 @@
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-        .frente {
-            background-color: rgb(255, 0, 234);
             color: white;
-            border: black;
+            font-size: 18px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
-        .verso{
-            background-color: rgb(128, 0, 0);
+        .verso {
             transform: rotateY(180deg);
-            text-align: center;
-            color: white;
         }
+
+        /* Cores únicas para cada cartão */
+        .container:nth-child(1) .frente { background-color: #df1f78; }
+        .container:nth-child(2) .frente { background-color: #d11717; }
+        .container:nth-child(3) .frente { background-color: #6f11eb; }
+        .container:nth-child(4) .frente { background-color: #f70abb; }
+        .container:nth-child(5) .frente { background-color: #eba611; }
+        .container:nth-child(6) .frente { background-color: #29ce97; }
+        .container:nth-child(7) .frente { background-color: #424645; }
+        .container:nth-child(8) .frente { background-color: #324de0; }
+        .container:nth-child(9) .frente { background-color: #e9dc28; }
+         .container:nth-child(10) .frente { background-color: #f77118; }
+
+        .container:nth-child(1) .verso { background-color: #dfa21f; }
+        .container:nth-child(2) .verso { background-color: #ffffff; color: #2c3e50; }
+        .container:nth-child(3) .verso { background-color: #9413df; }
+        .container:nth-child(4) .verso { background-color: #6f2baf; }
+        .container:nth-child(5) .verso { background-color: #2f223d; }
+        .container:nth-child(6) .verso { background-color: #212cc7; }
+        .container:nth-child(7) .verso { background-color: #70a2d4; }
+        .container:nth-child(8) .verso { background-color: #1c1491; }
+        .container:nth-child(9) .verso { background-color: #be1b1b; }
+        .container:nth-child(10) .verso { background-color: #54ca30; }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="cartaoNatal" id="cartaoN">
-            <div class="frente">
-                Feliz Aniversario 
-            </div>
-            <div class="verso" id="mensagemVerso">
-                Parabens
-            </div>
+        <div class="cartao">
+            <div class="frente">Feliz Aniversário</div>
+            <div class="verso">Parabéns!</div>
         </div>
     </div>
-   
     <div class="container">
-        <div class="cartao" id="cartao">
-            <div class="frente">
-                Feliz Aniversario
-            </div>
-            <div class="verso" id="mensagemVerso">
-            </div>
+        <div class="cartao">
+            <div class="frente">Feliz Natal</div>
+            <div class="verso">Boas Festividades</div>
         </div>
     </div>
+    <div class="container">
+        <div class="cartao">
+            <div class="frente">Feliz dia das mães</div>
+            <div class="verso">A melhor mãe do mundo</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="cartao">
+            <div class="frente">Feliz dia dos namorados</div>
+            <div class="verso">Que não se largem mais</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="cartao">
+            <div class="frente">Feliz ano novo</div>
+            <div class="verso">Para um ano melhor</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="cartao">
+            <div class="frente">Feliz pascoa</div>
+            <div class="verso">Que coma bastante chocolate</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="cartao">
+            <div class="frente">Feliz Dia do professor</div>
+            <div class="verso">Tem que ser forte pra dar aula</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="cartao">
+            <div class="frente">Me Perdoe</div>
+            <div class="verso">Eu errei</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="cartao">
+            <div class="frente">Você consegue</div>
+            <div class="verso">Nunca desista</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="cartao">
+            <div class="frente">Feliz festa junina</div>
+            <div class="verso">Olha a cobra</div>
+        </div>
+    </div>
+
     <script>
         document.querySelectorAll('.cartao').forEach(cartao => {
             cartao.addEventListener('click', () => {
                 cartao.classList.toggle('virado');
-            })
-        })
+            });
+        });
     </script>
 </body>
 </html>
